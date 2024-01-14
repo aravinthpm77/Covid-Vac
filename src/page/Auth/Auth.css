@@ -1,0 +1,78 @@
+.main{
+    background-color: aliceblue;
+    height:100vh;
+    width: 220vh;
+    align-items: center;
+    
+}
+.main-1{
+    position: absolute;
+    margin-top: 180px;
+    align-items: center;
+    background-color: rgba(162, 248, 251, 0.955);
+    margin-left: 600px;
+    padding: 20px 50px 30px 50px;
+    justify-content:center;
+}
+
+.form_display .form_text{
+    font-size: 1rem;
+    text-transform: uppercase;
+    color:rgb(31, 31, 31);
+    letter-spacing: .2rem;
+}
+.form_display{
+
+   align-items: center;
+   
+   
+   justify-content:center;
+    
+}
+
+.form_display input{
+    align-items: center;
+    padding-top: 12px;
+    padding-left: 10px;
+    padding-bottom: 12px;
+    width:220px;
+    border: none;
+    display:grid;
+    margin-top: 20px;
+}
+
+.form_display .submitbtn{
+    margin-top: 30px;
+    border:none;
+    background-color: rgba(53, 227, 243, 0.758);
+    width:230px;
+    height:40px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color:rgb(31, 31, 31);
+    letter-spacing: .2rem;
+    cursor: pointer;
+    transition: .3s;
+}
+.form_display .submitbtn:hover{
+    background-color: rgb(29, 180, 175);
+    color:rgba(255, 255, 255, 0.95)
+}
+
+.switch_content{
+    font-size: 0.75rem;
+    margin-top: 25px;
+    letter-spacing: .06rem;
+}
+.switch_content button{
+    border:none;
+    background-color: transparent;
+    text-transform: uppercase;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.switch_content button:hover{
+    
+    color:rgb(29, 180, 175);
+}
