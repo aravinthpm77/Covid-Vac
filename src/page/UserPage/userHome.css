@@ -1,0 +1,163 @@
+.main-user{
+    margin-top: -25px;
+    background-color: aliceblue;
+    scroll-behavior:smooth;
+    width: 220vh;
+    align-items: center;
+}
+
+.main-user .main-text{
+    align-items: center;
+    padding-top: 30px;
+    font-size: 1.5rem;
+    font-weight: 130;
+    text-transform: uppercase;
+    font-family:Arial, Helvetica, sans-serif;
+    letter-spacing: .3rem;
+
+}
+.main-user .main-cat{
+    font-size: 2rem;
+    font-weight: 500;
+}
+.main-user .main-cat span{
+    color:rgba(255, 0, 0, 0.681);
+}
+
+.search-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-icon{
+    position: absolute;
+    margin-left: -490px;
+    
+}
+.Searchtype{
+    width:500px;
+    height: 50px;
+    border:none;
+    padding-left: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 10px #00000030;
+}
+
+.Searchtype[type="text"]{
+    font-size: 0.8rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: .04rem;
+    color:#646464;
+    
+}
+.section1{
+    display: flex;
+}
+
+.display-content{
+    background-color:rgba(255, 255, 255);
+    margin-top: 30px;
+    margin-left: 75px;
+    margin-bottom: 30px;
+    width: 700px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 1px 10px #00000030;
+    padding:5px;
+
+}
+.display-content h3{
+    font-weight:500;
+    letter-spacing: .1rem;
+}
+.display-content .text{
+    font-size: .85rem;
+    font-family: 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight:100;
+    color:#4f4f4f;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+
+.vac-container{
+    display: flex;
+    justify-content: space-between;
+    margin:30px;
+    border-radius: 5px;
+    background-color: rgba(233, 233, 233, 0.77);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: .13rem;
+}
+
+.vac-container .City{
+    margin-left: 20px;
+}
+
+.vac-container .slots{
+
+    align-items: center;
+    text-align: center;
+    
+}
+
+
+.vac-container .btn{
+    position: relative;
+    margin-top: 5px;
+    width: 125px;
+    margin-bottom: 5px;
+    margin-right: 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    letter-spacing: .3rem;
+    text-transform: uppercase;
+    color:white;
+    background-color: rgba(83, 83, 83, 0.882);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.vac-container .btn:hover{
+    background-color: #4f4f4f;
+}
+
+.section{
+    margin-top: 30px;
+    margin-left: 100px;
+    
+}
+
+.app-ad1{
+    text-align: left;
+    position: absolute;
+    background:url(https://cdn.eka.care/vagus/cl3x2fscn00030se0bpiuc5do.webp) ;
+    background-repeat: no-repeat;
+    padding: 20px 30px 30px 20px;
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0px 1px 1px #00000030;
+
+}
+.section .app-ad1 p{
+    font-weight: 100;
+    
+    font-family:sans-serif;
+}
+
+.section .app-ad1 .Download{
+    position: absolute;
+    padding: 13px;
+    background-color: black;
+    color:white;
+    border:none;
+    margin-left: 150px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+
+}
