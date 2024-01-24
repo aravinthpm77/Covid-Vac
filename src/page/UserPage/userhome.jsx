@@ -1,31 +1,63 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import axios from "axios"
 import './userHome.css'
+import SearchBar  from "../../components/Search/Searchbar"
+import { SearchResultsList } from "../../components/Search/SearchResultsList";
 const Userhome =()=>{
-    const [employeeData, setEmployeeData] = useState([]);
+    useEffect(() => {
+    
+        fetchVacData();
+        const intervalId = setInterval(fetchVacData, 600);
+
+        
+        return () => clearInterval(intervalId);
+    }, []);
 
 
-    var vacList=[{
-        _id:'1',
-        cityName:"Hosur",
-        slots:'20',
-    },{
-        _id:'2',
-        cityName:"Bengaluru",
-        slots:'53',
-    },{
-        _id:'3',
-        cityName:'Salem',
-        slots:'32',
-    },{
-        _id:'4',
-        cityName:'Vellore',
-        slots:'37',
-    },{
-        _id:'5',
-        cityName:'Tambaram',
-        slots:'36',
-    }]
+    const [results, setResults] = useState([]);
+
+    const fetchVacData = async () => {
+        try {
+        const response = await axios.get('http://localhost:5000/vac');
+        
+        setVacData(response.data);
+        } catch (error) {
+        console.error('Error fetching Vaccation data:', error);
+        }
+    };
+    const [VacData, setVacData] = useState([]);
+
+    
+    
+    const [bookingSuccess, setBookingSuccess] = useState(false);
+
+    const handleBook = async (name,slots)=>{
+        try{
+            const response = axios.post("http://localhost:5000/book-slot",{
+               name,
+               slots,
+            });
+        
+            console.log(name,slots,response);
+            if (response.data && response.data?.Status === 'Success'){
+            
+                setBookingSuccess(true);
+                alert("Booked Slot")
+            } else {
+                console.error('Booking failed:', response.data?.message || 'Unknown Error');
+            }
+        } catch (error) {
+        console.error('Error booking slot:', error);
+        }
+    };
+    useEffect(() => {
+        // Redirect or update UI logic after successful booking
+        if (bookingSuccess) {
+            // Example: Redirect to a different page
+            // You can replace this with your actual logic
+            window.location.href = '/booking-success';
+        }
+    }, [bookingSuccess]);
 
     return(
 
@@ -35,8 +67,10 @@ const Userhome =()=>{
             <p className="main-text">User Page</p>
             <p className="main-cat">Book <span>CoVID</span> Vaccine Slots Now</p>
             <div className="search-section">
-                <img width="23" height="23" className="search-icon" src="https://img.icons8.com/ios/50/search--v1.png" alt="search--v1"/>
-                <input type="text" placeholder="Search City,District" className="Searchtype" />
+
+                <SearchBar setResults={setResults} />
+                {results && results.length > 0 && <SearchResultsList results={results} />}  
+                 {/* className="Searchtype" /> */}
             </div>
             
 
@@ -47,16 +81,17 @@ const Userhome =()=>{
                     <p className="text">Find vaccination centers near you. Search slots by location, pin code or by district. Book Covaxin, Covishield, or Sputnik V. Get Vaccinated with 1st or 2nd dose.</p>
                     {
                         
-                        vacList.map((vac)=>(
+                        VacData.map((vac)=>(
+                            
                             <div className="vac-container">
                                 <div className="City">
-                                    <p><span>City : </span>{vac.cityName}</p>
+                                    <p><span>City : </span>{vac.Name}</p>
                                     
                                 </div>
                                 <div className="slots">
-                                    <p>Slots: {vac.slots} </p>
+                                    <p>Slots: {vac.Slots} </p>
                                 </div>
-                                <button type="button" className="btn">Book</button>
+                                <button type="button" className="btn"  onClick={()=>handleBook(vac.Name,vac.Slots)}>Book</button>
                             </div>
                         ))
                     }

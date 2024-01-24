@@ -11,12 +11,12 @@
     align-items: center;
     background-color: rgba(162, 248, 251, 0.955);
     margin-left: 600px;
-    padding: 20px 50px 30px 50px;
+    padding: 0px 50px 30px 50px;
     justify-content:center;
 }
 
 .form_display .form_text{
-    font-size: 1rem;
+    font-size: 1.3rem;
     text-transform: uppercase;
     color:rgb(31, 31, 31);
     letter-spacing: .2rem;
@@ -30,11 +30,14 @@
     
 }
 
-.form_display input{
+.form_display .inputauth{
+
+    background-color: rgb(255, 255, 255);
     align-items: center;
-    padding-top: 12px;
+
+    padding-top:-10px;
     padding-left: 10px;
-    padding-bottom: 12px;
+    
     width:220px;
     border: none;
     display:grid;
@@ -65,7 +68,9 @@
     letter-spacing: .06rem;
 }
 .switch_content button{
+    text-decoration:underline;
     border:none;
+    color:rgb(0, 71, 71);
     background-color: transparent;
     text-transform: uppercase;
     transition: .2s;

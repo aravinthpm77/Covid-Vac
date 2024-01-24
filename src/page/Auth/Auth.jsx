@@ -91,12 +91,12 @@ const Auth = () =>{
                 {isSignup && 
                 
                 <label>
-                    <input type="text" onChange={(e)=>{setName(e.target.value)}} placeholder="Enter the name"/>
+                    <input className="inputauth" type="text" onChange={(e)=>{setName(e.target.value)}} placeholder="Enter the name"/>
 
                 </label>
                 }
-                <input type="email"  placeholder="Enter the Email"  onChange={(e)=>{setEmail(e.target.value)}}/>
-                <input type="password" placeholder="Enter the Password"  onChange={(e)=>{setPassword(e.target.value)}}/>
+                <input type="email" className="inputauth"  placeholder="Enter the Email"  onChange={(e)=>{setEmail(e.target.value)}}/>
+                <input type="password" className="inputauth" placeholder="Enter the Password"  onChange={(e)=>{setPassword(e.target.value)}}/>
 
 
                 <button  className="submitbtn" type="submit" >{isSignup ? 'Sign UP' : 'Log In'}</button>

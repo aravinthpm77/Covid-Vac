@@ -1,5 +1,6 @@
 .main-user{
     margin-top: -25px;
+    height:100%;
     background-color: aliceblue;
     scroll-behavior:smooth;
     width: 220vh;
@@ -25,9 +26,9 @@
 }
 
 .search-section{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+
+    margin-left: 600px;
 }
 .search-icon{
     position: absolute;
